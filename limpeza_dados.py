@@ -7,8 +7,7 @@ def limpar_dados(path_csv):
     df = df.dropna(axis=1, how='all')
 
 # Troca os valores 'Rs' na coluna Estado por 'Rio Grande do Sul'
-    valores_Rs = df['Estado'] == 'Rs'
-    df[valores_Rs]['Estado'] = 'Rio Grande do Sul'
+    df.loc[df['Estado'] == 'Rs', 'Estado'] = 'Rio Grande do Sul'
 
 # Elimina linhas com valores 'Misiones' na coluna 'Estado'
     df = df[df['Estado'] != 'Misiones']

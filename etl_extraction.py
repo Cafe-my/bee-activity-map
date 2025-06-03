@@ -34,7 +34,6 @@ def extract_bee_data(limit=300):
         else:
             print(f"Erro: {response.status_code}")
             break
-        
     return results_total
 
 def transform_data(results_total):
